@@ -1,0 +1,22 @@
+//from @media
+@mixin tablet() {
+  @media screen and (min-width: 940px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+//
+
+//from display
+@mixin display-flex($justify: normal, $align: normal, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+//
