@@ -1,0 +1,70 @@
+@use "sass:list";
+
+$list-of-colors: (blue, green, yellow, pink, red);
+
+footer {
+  @extend %container;
+  background-color: transparent;
+  padding: 0 2rem;
+
+  > nav {
+    padding: 4rem 0;
+    font-size: 1.5rem;
+    color: $main-text-color;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    // @for $var from 1 through list.length($list-of-colors) {
+    //   &:nth-child(#{$var}) {
+    //     background-color: list.nth($list-of-colors, $var);
+    //   }
+    // }
+
+    > h5 {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      > li {
+        margin: 0.5rem 0;
+
+        > a {
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &:last-of-type {
+      font-size: 1.5rem;
+      > ul {
+        display: flex;
+
+        > li {
+          > a {
+            font-size: 4rem;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  div {
+    padding: 3rem 0 6rem 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $main-text-color;
+
+    p {
+      opacity: 0.75;
+      &:nth-child(2) {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
