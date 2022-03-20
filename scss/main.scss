@@ -1,0 +1,25 @@
+@import "./reset";
+@import "placeholders";
+@import "mixins";
+@import "./variables";
+@import "./grid";
+@import "./header";
+@import "./section--one";
+@import "./section--two";
+@import "./section--three";
+@import "./footer";
+
+html {
+  font-size: 10px;
+  font-family: $font-open-sans;
+}
+
+body {
+  background-color: $main-background-color;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
