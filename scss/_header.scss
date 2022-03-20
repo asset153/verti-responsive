@@ -1,0 +1,78 @@
+.header {
+  @extend %container;
+  @include display-flex(center, center);
+  margin-top: 5.5rem;
+
+  @include tablet() {
+    @include display-flex(space-between, center);
+  }
+
+  .header__container {
+    @include display-flex(center, center, column);
+
+    @include tablet() {
+      @include display-flex(center, center, row);
+    }
+
+    .header__container__title {
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      font-family: $font-oleo-script;
+      letter-spacing: 0.2rem;
+      color: white;
+      background-color: $logo-background;
+      font-size: 3.6rem;
+
+      @include tablet() {
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+    }
+
+    .header__container__subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $main-text-color;
+      opacity: 0.9;
+    }
+  }
+
+  .header__navigation {
+    display: none;
+
+    @include tablet() {
+      display: inline-block;
+      font-size: 2rem;
+    }
+
+    .header__navigation__list {
+      .header__navigation__list__item {
+        display: inline-block;
+        margin: 0 1.5rem;
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        font-size: 1.44rem;
+        font-weight: 700;
+        color: $main-text-color;
+        opacity: 0.8;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: white;
+        }
+
+        &:first-child {
+          margin-left: 0;
+          background-color: black;
+          color: white;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
