@@ -7,11 +7,17 @@ footer {
   background-color: transparent;
   padding: 0 2rem;
 
+  @include tablet() {
+    @include display-flex(space-between, flex-start, row);
+    flex-wrap: wrap;
+    padding: 10rem 0rem;
+  }
+
   > nav {
     padding: 4rem 0;
     font-size: 1.5rem;
     color: $main-text-color;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.1rem solid #eee;
     font-weight: 300;
     // @for $var from 1 through list.length($list-of-colors) {
     //   &:nth-child(#{$var}) {
@@ -19,14 +25,27 @@ footer {
     //   }
     // }
 
+    @include tablet() {
+      border-bottom: none;
+      padding: 4rem 0;
+    }
+
     > h5 {
       font-size: 1.7rem;
       margin-bottom: 2rem;
+
+      @include tablet() {
+        font-size: 2rem;
+      }
     }
 
     ul {
       > li {
         margin: 0.5rem 0;
+
+        @include tablet() {
+          margin: 1rem 0;
+        }
 
         > a {
           text-decoration: underline;
@@ -46,9 +65,16 @@ footer {
 
         > li {
           > a {
+            color: $main-text-color;
             font-size: 4rem;
             margin-right: 1rem;
           }
+        }
+      }
+
+      p {
+        &:nth-of-type(2) {
+          margin: 0.75rem 0;
         }
       }
     }
@@ -59,11 +85,27 @@ footer {
     font-size: 1.5rem;
     font-weight: 300;
     color: $main-text-color;
+    align-self: center;
+
+    @include tablet() {
+      width: 100%;
+
+      @include display-flex(center, center);
+    }
 
     p {
       opacity: 0.75;
       &:nth-child(2) {
         margin: 1rem 0;
+
+        @include tablet() {
+          border-left: 0.1rem solid $main-text-color;
+          border-right: 0.1rem solid $main-text-color;
+        }
+      }
+
+      @include tablet() {
+        padding: 0 2rem;
       }
     }
   }
