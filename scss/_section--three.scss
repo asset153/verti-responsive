@@ -1,6 +1,4 @@
 .section--three {
-  // @extend %container;
-
   padding: 3.5rem;
   background-color: white;
 
@@ -8,10 +6,7 @@
     @extend %container;
 
     @include tablet() {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row-reverse;
+      @include display-flex(center, center, row-reverse);
       padding: 3.5rem 0;
     }
 
@@ -21,10 +16,7 @@
 
         @include tablet() {
           flex-basis: 70%;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: space-between;
+          @include display-flex(space-between, flex-start, column);
           border-bottom: none;
           padding-left: 7rem;
         }
@@ -59,7 +51,6 @@
 
         > button {
           @extend %normalize-buttons;
-
           margin: 4rem 0;
           background-color: $border-buttons;
           color: white;
@@ -80,11 +71,7 @@
 
       &:nth-child(2) {
         @include tablet() {
-          // background-color: blue;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: space-around;
+          @include display-flex(space-around, flex-start, column);
           flex-basis: 30%;
           min-height: 445px;
         }
@@ -112,7 +99,7 @@
             width: calc(50% - 0.5rem);
 
             @include tablet() {
-              border-radius: 5px;
+              border-radius: 0.5rem;
             }
           }
         }
